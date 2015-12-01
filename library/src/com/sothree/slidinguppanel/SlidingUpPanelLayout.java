@@ -1230,6 +1230,8 @@ public class SlidingUpPanelLayout extends ViewGroup {
         return result;
     }
 
+    private int panelTop;
+
     /**
      * Smoothly animate mDraggingPane to the target X position within its range.
      *
@@ -1242,13 +1244,17 @@ public class SlidingUpPanelLayout extends ViewGroup {
             return false;
         }
 
-        int panelTop = computePanelTopPosition(slideOffset);
+        panelTop = computePanelTopPosition(slideOffset);
         if (mDragHelper.smoothSlideViewTo(mSlideableView, mSlideableView.getLeft(), panelTop)) {
             setAllChildrenVisible();
             ViewCompat.postInvalidateOnAnimation(this);
             return true;
         }
         return false;
+    }
+
+    public int getPanelTop(){
+        return panelTop;
     }
 
     @Override
