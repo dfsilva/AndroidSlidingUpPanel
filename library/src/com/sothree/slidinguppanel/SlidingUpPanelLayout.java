@@ -1121,10 +1121,10 @@ public class SlidingUpPanelLayout extends ViewGroup {
         if (mFirstLayout) {
             mSlideState = state;
         } else {
-            if (mSlideState == PanelState.HIDDEN) {
-                mSlideableView.setVisibility(View.VISIBLE);
-                requestLayout();
-            }
+//            if (mSlideState == PanelState.HIDDEN) {
+//                mSlideableView.setVisibility(View.VISIBLE);
+//                requestLayout();
+//            }
             switch (state) {
                 case ANCHORED:
                     smoothSlideTo(mAnchorPoint, 0);
